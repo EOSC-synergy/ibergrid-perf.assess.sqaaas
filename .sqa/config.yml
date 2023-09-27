@@ -1,0 +1,76 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.11
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/eosc-synergy/ibergrid-perf:
+      branch: main
+      repo: https://github.com/eosc-synergy/ibergrid-perf
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf git:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-aqua-deer.sh
+        container: qc.acc_sickly-cornflower-angora
+  QC.Doc:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scaly-grey-chinook.sh
+        container: qc.doc_jumpy-purple-hippopotamus
+      github.com/eosc-synergy/ibergrid-perf git:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-ochre-weasel.sh
+        container: qc.doc_craggy-cobalt-hornet
+      github.com/eosc-synergy/ibergrid-perf markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.muzzy-cyan-squid.sh
+        container: qc.doc_crappy-chocolate-dollar
+      github.com/eosc-synergy/ibergrid-perf restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.homely-burgundy-chow.sh
+        container: qc.doc_flimsy-tan-fousek
+  QC.Lic:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.ready-scarlet-nightingale.sh
+        container: qc.lic_scanty-coral-eel
+  QC.Met:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf validate_codemeta:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-plum-bulldog.sh
+        container: qc.met_woozy-buff-lizard
+  QC.Sec:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.hilly-wisteria-angora.sh
+        container: qc.sec_freaky-cornflower-vulture
+  QC.Sty:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.wheezy-linen-squid.sh
+        container: qc.sty_clammy-chartreuse-manatee
+      github.com/eosc-synergy/ibergrid-perf hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.breezy-smalt-giraffe.sh
+        container: qc.sty_skimpy-ivory-stingray
+      github.com/eosc-synergy/ibergrid-perf jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.whiny-russet-cow.sh
+        container: qc.sty_messy-asparagus-bear
+  QC.Ver:
+    repos:
+      github.com/eosc-synergy/ibergrid-perf get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.chewy-crimson-turkey.sh
+        container: qc.ver_skimpy-lime-raccoon
+timeout: 5400
