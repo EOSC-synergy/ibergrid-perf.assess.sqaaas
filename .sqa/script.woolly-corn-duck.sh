@@ -3,6 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/eosc-synergy/ibergrid-perf &&
-    cat codemeta.json
+cd github.com/EOSC-synergy/ibergrid-perf &&
+    rst-lint --level warning --format json .
 )

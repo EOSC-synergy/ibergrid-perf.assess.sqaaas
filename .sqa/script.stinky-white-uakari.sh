@@ -3,6 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/eosc-synergy/ibergrid-perf &&
-    licensee detect . --confidence 60 --json
+cd github.com/EOSC-synergy/ibergrid-perf &&
+    jsonlint-cli "**/*.json"
 )
