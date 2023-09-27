@@ -3,6 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/EOSC-synergy/ibergrid-perf &&
+cd github.com/eosc-synergy/ibergrid-perf &&
     hadolint service_backup/Dockerfile service_certificate/Dockerfile service_postfix/Dockerfile service_rproxy/Dockerfile --failure-threshold error
 )

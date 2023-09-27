@@ -3,6 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/EOSC-synergy/ibergrid-perf &&
-    find_doc_files.py --file_type all
+cd github.com/eosc-synergy/ibergrid-perf &&
+    get_git_tags.py
 )
